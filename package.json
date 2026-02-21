@@ -1,0 +1,46 @@
+{
+  "name": "n8n-nodes-intelligentdata",
+  "version": "0.1.0",
+  "description": "n8n community node for the apexanalytix Intelligent Data API — address, tax, bank, business, sanctions, and director validation",
+  "keywords": [
+    "n8n-community-node-package",
+    "n8n",
+    "apexanalytix",
+    "intelligentdata",
+    "smartvm",
+    "validation",
+    "kyc",
+    "sanctions"
+  ],
+  "license": "MIT",
+  "homepage": "https://portal.smartvmapi.com",
+  "repository": {
+    "type": "git",
+    "url": "https://gitea.apexanalytix.app/data/smartvm-portal.git",
+    "directory": "sdks/n8n"
+  },
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc && cp nodes/IntelligentData/*.png dist/nodes/IntelligentData/ 2>/dev/null; true",
+    "lint": "tsc --noEmit"
+  },
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/IntelligentDataApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/IntelligentData/IntelligentData.node.js"
+    ]
+  },
+  "devDependencies": {
+    "n8n-workflow": "^1.0.0",
+    "typescript": "^5.7.0"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  }
+}
